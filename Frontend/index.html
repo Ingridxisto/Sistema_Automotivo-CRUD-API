@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Veiculos</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Sistema Automotivo</h1>
+        <p>Gerencie seu catálogo de veículos com facilidade!</p>
+    </header>
+
+    <div id="messageContainer" class="message" style="display: none;"></div>
+
+    <main class="main-content">
+        <section class="form-section">
+            <h2>Cadastrar Veiculo</h2>
+            <form>
+                <input type="text" id="brandInput" placeholder="Marca">
+                <input type="text" id="modelInput" placeholder="Modelo">
+                <input type="text" id="yearManufactureInput" placeholder="Ano de Fabricação">
+                <input type="text" id="colorInput" placeholder="Cor">
+                <input type="text" id="priceInput" placeholder="Preço">
+                <input type="text" id="mileageInput" placeholder="Quilometragem">
+                <input type="text" id="statusAvailabilityInput" placeholder="Status de Disponibilidade">
+                <input type="text" id="imageInput" accept="image/*" placeholder="URL Imagem">
+
+                <button type="button" onclick="addVehicle()">Adicionar Veiculo</button>
+            </form>
+        </section>
+    
+        <section class="search-section">
+            <h2>Pesquise o veiculo que deseja</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Digite a marca ou modelo do veículo que deseja pesquisar...">
+                <button onclick="searchVehicle()">Buscar Veiculo</button>
+                <button onclick="loadCards()">Recarregar Lista</button>
+            </div>
+        </section>
+
+        <h2>Catálogo de Veiculos</h2>
+        <section id="cardContainer" class="card-container todos-veiculos-section">
+            <div class="card-row" id="vehiclesList">
+                <!-- Livros serão adicionados aqui em grupos de 5 -->
+            </div>
+
+            <!-- Botões "Ver Mais" e "Ver Menos" adicionados aqui -->
+            <div class="buttons-container">
+                <button class="view-more-button">Ver Mais</button>
+                <button class="view-less-button">Ver Menos</button>
+            </div>
+        </section>
+
+        <div id="vehicle-container">
+            <h2 id="veiculos-por-marca-veiculo">Veículos por Marcas</h2> <!-- Título fixo aqui -->
+            <div id="vehicle-list" class="vehicle-list"></div> <!-- Lista de livros renderizada dinamicamente -->
+        </div>
+        
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Sistema Automotivo. Todos os direitos reservados.</p>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>
